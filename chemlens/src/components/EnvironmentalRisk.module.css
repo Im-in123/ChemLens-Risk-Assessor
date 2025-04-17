@@ -1,0 +1,432 @@
+ /* src/components/EnvironmentalRisk.module.css */
+ 
+.container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* System Font Stack */
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    border-radius: 8px;
+    background-color: #f9fafb; /* Tailwind gray-50 */
+    color: #1f2937; /* Default text color */
+}
+
+.container h1 {
+    text-align: center;
+    color: #1f2937; /* Tailwind gray-800 */
+    margin-bottom: 8px;
+    font-size: 1.75rem; /* Larger heading */
+    font-weight: 600;
+}
+
+.description {
+    text-align: center;
+    color: #4b5563; /* Tailwind gray-600 */
+    margin-bottom: 15px;
+    font-size: 1rem;
+    max-width: 700px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Added Explanation Text Style */
+.explanationText {
+    font-size: 0.875rem; /* Smaller text */
+    color: #4b5563; /* Tailwind gray-600 */
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+    border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+    padding: 12px 15px; /* Adjusted padding */
+    border-radius: 6px;
+    margin-bottom: 25px; /* More space below */
+    line-height: 1.5;
+}
+.explanationText strong {
+    color: #1f2937; /* Tailwind gray-800 */
+}
+.explanationText a { /* Style links within explanation if needed */
+    color: #3b82f6;
+    text-decoration: underline;
+}
+.explanationText a:hover {
+    color: #1d4ed8;
+}
+
+
+.inputGroup {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: stretch; /* Ensure items stretch vertically */
+  }
+  
+  /* NEW: Wrapper for input and clear button */
+  .inputWrapper {
+      position: relative; /* Needed for absolute positioning of the button */
+      flex-grow: 1;      /* Allow wrapper to take available space */
+      display: flex;     /* Align input within */
+  }
+  
+  .inputField {
+    flex-grow: 1;
+    padding: 10px 12px;
+    padding-right: 35px; /* Adjust as needed based on button size/position */
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #1f2937;
+    width: 100%; /* Ensure it fills the wrapper */
+  }
+  .inputField:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      border-color: #3b82f6; /* Tailwind blue-500 */
+      box-shadow: 0 0 0 2px #bfdbfe; /* Tailwind blue-200 */
+  }
+  
+  /* NEW: Clear button style */
+  .clearButton {
+      position: absolute;
+      right: 10px; /* Position from the right edge of the wrapper */
+      top: 50%;    /* Position vertically centered */
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      padding: 0 5px; /* Add some horizontal padding for easier clicking */
+      margin: 0;
+      cursor: pointer;
+      color: #6b7280; /* Tailwind gray-500 */
+      font-size: 1.5rem; /* Make the 'X' larger */
+      line-height: 1;  /* Prevent extra line height */
+      z-index: 2; /* Ensure it's above the input field if needed */
+  }
+  .clearButton:hover,
+  .clearButton:focus {
+      color: #1f2937; /* Darken on hover/focus */
+      outline: none; /* Optional: remove default focus outline if desired */
+  }
+  
+  
+  .submitButton {
+    padding: 10px 20px;
+    background-color: #3b82f6; /* Tailwind blue-500 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    white-space: nowrap; /* Prevent wrapping */
+    /* Ensure button height matches input field height */
+    height: auto; /* Or set a specific height matching input */
+    align-self: center; /* Center button vertically if needed */
+  }
+  .submitButton:hover:not(:disabled) {
+    background-color: #2563eb; /* Tailwind blue-600 */
+  }
+  .submitButton:disabled {
+    background-color: #9ca3af; /* Tailwind gray-400 */
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+.message {
+    text-align: center;
+    margin: 20px 0;
+    padding: 12px 15px; /* Slightly more padding */
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.loader {
+  color: #1e40af; /* Tailwind blue-800 */
+  font-weight: 500;
+  background-color: #eff6ff; /* Tailwind blue-50 */
+  border: 1px solid #bfdbfe; /* Tailwind blue-200 */
+}
+
+.errorText {
+  color: #991b1b; /* Tailwind red-800 */
+  background-color: #fee2e2; /* Tailwind red-100 */
+  border: 1px solid #fecaca; /* Tailwind red-200 */
+  font-weight: 500;
+}
+.warningText {
+    color: #92400e; /* Tailwind amber-800 */
+    background-color: #fef3c7; /* Tailwind amber-100 */
+    border: 1px solid #fde68a; /* Tailwind amber-200 */
+    font-weight: 500; /* Make warnings stand out slightly */
+}
+
+
+.resultsContainer {
+  margin-top: 25px;
+  border-top: 1px solid #e5e7eb; /* Tailwind gray-200 */
+  padding-top: 25px;
+}
+
+.resultsContainer h2 {
+    color: #111827; /* Tailwind gray-900 */
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+/* Style the strong tag used for the compound name */
+.resultsContainer h2 strong {
+    color: #1d4ed8; /* Tailwind blue-700 or another highlight color */
+}
+
+.subHeader {
+    font-size: 0.9em;
+    color: #6b7280; /* Tailwind gray-500 */
+    margin-bottom: 25px; /* More space */
+}
+.subHeader a {
+    color: #3b82f6; /* Tailwind blue-500 */
+    text-decoration: none;
+    font-weight: 500;
+}
+.subHeader a:hover {
+    text-decoration: underline;
+    color: #1d4ed8; /* Tailwind blue-700 */
+}
+
+
+.infoSection {
+  background-color: #fff;
+  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+  border-radius: 6px;
+  padding: 15px 20px; /* More horizontal padding */
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.07); /* Slightly enhanced shadow */
+}
+
+.infoSection h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #1f2937; /* Tailwind gray-800 */
+  border-bottom: 1px solid #f3f4f6; /* Tailwind gray-100 */
+  padding-bottom: 10px; /* Increased padding */
+  font-size: 1.25rem; /* Slightly larger section titles */
+  font-weight: 600;
+}
+
+.infoSection h4 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #374151; /* Tailwind gray-700 */
+    font-weight: 600; /* Bolder sub-heading */
+    font-size: 1rem; /* Base size */
+}
+
+.infoSection ul {
+  /* list-style: disc; */ /* Handled by specific list styles below */
+  margin-left: 5px; /* Reduced default indent */
+  padding-left: 20px; /* Control padding for bullets */
+  margin-top: 5px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.infoSection ul li {
+    margin-bottom: 6px; /* Slightly more space */
+    color: #374151; /* Tailwind gray-700 */
+}
+
+.infoSection p {
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #374151; /* Tailwind gray-700 */
+}
+
+/* --- Risk Summary Enhancements --- */
+.riskSummary {
+    border-left-width: 5px; /* Keep border */
+    border-left-style: solid;
+    /* border-color set by risk level class */
+    padding-left: 20px; /* Increase padding */
+}
+.riskHeader {
+    /* Specific style for the Risk Summary H3 if needed */
+    /* color: #111827; */
+}
+.riskScoreLevelContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 10px 20px; /* Row and column gap */
+    margin-bottom: 15px;
+    font-size: 1.1rem; /* Larger font */
+    align-items: center; /* Align items vertically */
+}
+/* Removed media query, flex-wrap handles responsiveness adequately */
+/* @media (min-width: 640px) { ... } */
+
+.riskLevelDisplay, .riskScoreDisplay {
+    display: flex; /* Use flex for internal alignment */
+    align-items: baseline; /* Align text baselines */
+    gap: 8px; /* Space between label and value */
+}
+
+.riskLevelDisplay strong, .riskScoreDisplay strong {
+    color: #4b5563; /* Tailwind gray-600 */
+    /* margin-right: 8px; removed, use gap */
+    font-weight: 500; /* Less emphasis than value */
+}
+.riskLevelText {
+    font-weight: 700; /* Bold */
+    font-size: 1.2em; /* Larger */
+    padding: 3px 8px; /* Adjusted padding */
+    border-radius: 4px;
+    display: inline-block; /* Ensure background covers text */
+}
+.riskScoreValue {
+    font-weight: 700;
+    font-size: 1.2em;
+    font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* Monospace for score */
+}
+.riskReasonsList {
+    list-style-type: '⚠️ '; /* Use warning emoji as bullet */
+    padding-left: 10px; /* Adjust position of emoji */
+}
+.riskReasonsList li {
+    margin-bottom: 8px;
+    padding-left: 5px; /* Space after emoji */
+}
+
+/* Risk level specific colors - Looks good */
+.riskLow .riskLevelText, .riskLow .riskScoreValue { color: #057a55; /* Tailwind green-700 */}
+.riskLow { border-left-color: #34d399; /* Tailwind green-400 */ }
+.riskLow .riskLevelText { background-color: #def7ec; /* Tailwind green-100 */}
+
+.riskMedium .riskLevelText, .riskMedium .riskScoreValue { color: #b45309; /* Tailwind amber-700 */}
+.riskMedium { border-left-color: #f59e0b; /* Tailwind amber-500 */ }
+.riskMedium .riskLevelText { background-color: #fef3c7; /* Tailwind amber-100 */}
+
+.riskHigh .riskLevelText, .riskHigh .riskScoreValue { color: #b91c1c; /* Tailwind red-700 */}
+.riskHigh { border-left-color: #f87171; /* Tailwind red-400 */ }
+.riskHigh .riskLevelText { background-color: #fee2e2; /* Tailwind red-100 */}
+
+.riskUnknown .riskLevelText, .riskUnknown .riskScoreValue { color: #4b5563; /* Tailwind gray-600 */}
+.riskUnknown { border-left-color: #9ca3af; /* Tailwind gray-400 */ }
+.riskUnknown .riskLevelText { background-color: #f3f4f6; /* Tailwind gray-100 */}
+
+
+/* --- GHS Section --- */
+.ghsSection .pictogramContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.ghsSection .pictogram {
+  height: 45px; /* Slightly larger */
+  width: 45px;
+  background-color: #fff; /* Ensure background isn't transparent */
+  object-fit: contain; /* Prevent distortion */
+}
+.statementList {
+    list-style: disc; /* Standard bullets */
+}
+.statementList li {
+    font-size: 0.95em;
+    cursor: help; /* Indicate tooltip is available */
+}
+.precautionaryCodes {
+    font-size: 0.9em;
+    color: #4b5563; /* Tailwind gray-600 */
+    word-break: break-word;
+    background-color: #f9fafb; /* Tailwind gray-50 */
+    padding: 8px 10px; /* More padding */
+    border-radius: 4px;
+    border: 1px dashed #e5e7eb; /* Dashed border */
+    margin-top: 5px;
+}
+.ghsSection small { /* Style for the note */
+    font-size: 0.85em;
+    color: #6b7280; /* gray-500 */
+    display: inline-block; /* Keep on same line if possible */
+    margin-top: 5px;
+}
+
+/* --- Properties Section --- */
+.propertiesSection .propertyList {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+.propertiesSection .propertyList li {
+    margin-bottom: 8px;
+    display: flex; /* Use flex for alignment */
+    align-items: flex-start; /* Align to top for long values */
+    gap: 8px;
+}
+.propertiesSection .propertyList strong {
+    display: inline-block;
+    min-width: 110px; /* Adjust for alignment */
+    color: #4b5563; /* Tailwind gray-600 */
+    font-weight: 500;
+    flex-shrink: 0; /* Prevent label from shrinking */
+}
+.propertiesSection .propertyList span {
+    word-break: break-word; /* Allow long values to wrap */
+}
+
+.propertiesSection .code {
+    font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+    padding: 2px 5px;
+    border-radius: 3px;
+    word-break: break-all; /* Break long codes */
+    font-size: 0.9em;
+    border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+    color: #374151; /* Darker code text */
+}
+
+/* --- Toxicity & Environmental Sections --- */
+.toxicitySection ul, .environmentalSection ul {
+    font-size: 0.9em;
+    color: #1f2937; /* Tailwind gray-800 */
+    margin-top: 10px; /* Space above lists */
+}
+/* Common styling for excerpt lists */
+.excerptList {
+    list-style: square; /* Different bullet */
+    padding-left: 25px; /* Indent */
+}
+.excerptList li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e5e7eb; /* Tailwind gray-200 */
+    word-break: break-word; /* Ensure long excerpts wrap */
+}
+.excerptList li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+/* Disclaimer specific styling */
+.disclaimerText small {
+    color: #7f1d1d; /* Tailwind red-900 */
+    display: block;
+    margin-top: 15px;
+    background-color: #fef2f2; /* Tailwind red-50 */
+    padding: 10px 12px; /* More padding */
+    border-radius: 4px;
+    border: 1px solid #fecaca; /* Tailwind red-200 */
+    font-weight: 400; /* Normal weight for readability */
+    line-height: 1.5;
+}
+
+/* Synonyms Section */
+.synonymsSection .synonymList {
+    font-size: 0.9em;
+    color: #4b5563; /* Tailwind gray-600 */
+    line-height: 1.7;
+    word-spacing: 2px; /* Slightly more space between comma-separated items */
+}
+
+/* Description Section */
+.descriptionSection p {
+    line-height: 1.7; /* More readable line height for prose */
+}
