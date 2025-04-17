@@ -1,6 +1,6 @@
 # ChemLens – Environmental & Safety Risk Assessor 🧪
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 A web application built with Next.js that allows users to quickly assess the potential environmental and human safety risks of chemical compounds by leveraging the PubChem PUG REST and PUG View APIs. Enter a chemical name, CID, formula, or InChI string to get started.
 
@@ -63,11 +63,11 @@ To get a local copy up and running, follow these simple steps.
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/YourGitHubUsername/YourProjectRepoName.git
+    git clone https://github.com/Im-in123/ChemLens-Risk-Assessor
     ```
 2.  Navigate to the project directory:
     ```bash
-    cd YourProjectRepoName
+    cd chemlens
     ```
 3.  Install NPM packages:
     ```bash
@@ -127,3 +127,5 @@ Project Link: **[https://github.com/Im-in123/ChemLens-Risk-Assessor](https://git
 *   [PubChem](https://pubchem.ncbi.nlm.nih.gov/) for providing the invaluable chemical data via their APIs.
 *   [Next.js](https://nextjs.org/) Team
 *   [StackUp](https://stackup.dev/) / [AngelHack](https://angelhack.com/) for hosting the hackathon.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
