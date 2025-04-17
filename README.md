@@ -8,7 +8,9 @@ A web application built with Next.js that allows users to quickly assess the pot
 
 ## Demo
 
-*   **Video Demo:** **[Link to Your Video Demo - Click Here]** *(Replace with your actual video link, e.g., YouTube, Loom)*
+ 
+- [Watch/Download the demo (GitHub)](./Demo.mp4)  
+- [Watch the demo (YouTube)]()
 <!-- *   **(Optional) Live Application:** **[Link to Your Deployed App (Optional)]** *(Replace if you deploy it)* -->
 
 
@@ -118,7 +120,8 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 
 ## Contact
 
-Your Name/Handle - **[@Rudy00243322](https://twitter.com/@Rudy00243322)** or **Discord: rudy77_**  
+- X Handle - **[@Rudy00243322](https://twitter.com/@Rudy00243322)**
+- Discord Handle - **rudy77_**  
 
 Project Link: **[https://github.com/Im-in123/ChemLens-Risk-Assessor](https://github.com/Im-in123/ChemLens-Risk-Assessor)** 
 
@@ -129,3 +132,6 @@ Project Link: **[https://github.com/Im-in123/ChemLens-Risk-Assessor](https://git
 *   [StackUp](https://stackup.dev/) / [AngelHack](https://angelhack.com/) for hosting the hackathon.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+ 
+ 
