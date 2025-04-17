@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import styles from './EnvironmentalRisk.module.css';
 
-// My interface should match the final ApiResponseData from my backend(reminder)
+ 
 interface ApiData {
     query: string;
     queryType: string;
@@ -38,7 +38,7 @@ interface ApiData {
         bioaccumulation: string[];
     };
     synonyms: string[];
-    description?: string; // Added description
+    description?: string;  
     pubChemUrl: string;
 }
 
