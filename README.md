@@ -10,7 +10,7 @@ A web application built with Next.js that allows users to quickly assess the pot
 
  
 - [Watch/Download the demo (GitHub)](./Demo.mp4)  
-- [Watch the demo (YouTube)]()
+- [Watch the demo (YouTube)](https://youtu.be/VQ-gMq-O6QE)
 <!-- *   **(Optional) Live Application:** **[Link to Your Deployed App (Optional)]** *(Replace if you deploy it)* -->
 
 
